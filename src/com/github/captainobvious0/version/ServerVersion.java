@@ -15,9 +15,7 @@ public class ServerVersion {
     ChannelPipeline pipeline;
     ChannelDuplexHandler handler;
 
-    public ServerVersion() {
-
-    }
+    public ServerVersion() { }
 
     public void setServerVersion() {
         try {
@@ -25,18 +23,14 @@ public class ServerVersion {
             if (bukkitVersion.equals("v1_8_R3")) {
                 version = "1.8";
                 Bukkit.getLogger().log(Level.INFO, "Server version set to: " + version);
-                return;
             } else if (bukkitVersion.equals("v1_9_R1")) {
                 version = "1.9";
                 Bukkit.getLogger().log(Level.INFO, "Server version set to: " + version);
-                return;
             } else {
                 Bukkit.getLogger().log(Level.SEVERE, "Server version not supported (" + bukkitVersion + ")");
-                return;
             }
         } catch (ArrayIndexOutOfBoundsException e) {
             Bukkit.getLogger().log(Level.SEVERE, "Server version not found");
-            return;
         }
     }
 
@@ -64,10 +58,6 @@ public class ServerVersion {
     public void addChannel(ChannelPipeline pipeline, ChannelDuplexHandler handler) {
         this.pipeline = pipeline;
         this.handler = handler;
-    }
-
-    public void removeListener() {
-        pipeline.remove(handler);
     }
 
 }

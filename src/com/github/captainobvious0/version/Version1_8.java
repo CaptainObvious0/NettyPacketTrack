@@ -37,8 +37,8 @@ public class Version1_8 extends ServerVersion {
             }
             Bukkit.getLogger().info("New Message: " + ((PacketPlayInChat) packet).a());
         } else if (packet instanceof PacketPlayOutChat) {
+            PacketPlayOutChat chatPacket = (PacketPlayOutChat) packet;
             try {
-                PacketPlayOutChat chatPacket = (PacketPlayOutChat) packet;
                 addToChatMessageOut(chatPacket);
             } catch (Exception e) {
                 e.printStackTrace();

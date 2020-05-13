@@ -33,8 +33,8 @@ public class Version1_9 extends ServerVersion {
                 e.printStackTrace();
             }
         } else if (packet instanceof PacketPlayOutChat) {
+            PacketPlayOutChat chatPacket = (PacketPlayOutChat) packet;
             try {
-                PacketPlayOutChat chatPacket = (PacketPlayOutChat) packet;
                 addToChatMessageOut(chatPacket);
             } catch (Exception e) {
                 e.printStackTrace();
