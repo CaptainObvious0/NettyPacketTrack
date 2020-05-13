@@ -1,0 +1,4 @@
+name: NettyPacketTrack
+main: com.github.captainobvious0.NettyPacketTrack
+version: 1.0
+commands:
